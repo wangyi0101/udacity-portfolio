@@ -1,0 +1,26 @@
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+} 
+.image{
+    max-width: 550px;  
+}
+.description{
+    max-width: 705px;
+    padding:5% 2% 2%;
+    color: #7C8B88;
+}
+.app{
+    display: flex;
+    display: -webkit-flex;
+    margin:5% 0% 0% 5%;
+}
+.title{
+    background-color: #33BEBE;
+    padding:5% 2% 2%;
+    margin:5% 0% 0% 5%;
+    color:white;
+}
