@@ -20,14 +20,17 @@ var work = {
     {
         "employer": "sina",
         "title": "product marketing manager",
-        "lacation": "Beijing, China",
+        "location": "Beijing, China",
         "dates": "2004-2006",
+        "description": "Twitter makes it easy to connect with experts in your field. Take advantage of your connections by re-tweeting and commenting on their tweets.",
     },
     {
         "employer": "jinku",
         "title": "senior product marketing manager",
         "location": "Beijing, China",
         "dates": "2008-2010",
+        "description": "Twitter makes it easy to connect with experts in your field. Take advantage of your connections by re-tweeting and commenting on their tweets.",
+
     }
     ]
 }
@@ -67,23 +70,56 @@ var education = {
 }
 
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
+
+var formattedHeaderName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-
 var formattedBiopic = HTMLbioPic.replace("%data%", bio.bioPic);
-var formattedSkills =HTMLskills.replace("%data%", bio.skills);
+var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
 
 
-$("#header").prepend(formattedName);
+$("#header").append(formattedHeaderName);
 $("#header").append(formattedRole);
-$("#footerContacts").append(formattedMobile, formattedEmail,formattedTwitter,formattedGithub, formattedLocation);
 $("#header").append(formattedBiopic);
-$("#header").append(formattedSkills);
+$("#header").append(formattedWelcome);
 
+
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+$("#topContacts").append(formattedMobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+$("#topContacts").append(formattedEmail);
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+$("#topContacts").append(formattedTwitter);
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+$("#topContacts").append(formattedGithub);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+$("#topContacts").append(formattedLocation);
+
+if(bio.skills.length > 0){
+    $("#header").append(HTMLskillsStart);
+    var formattedSkills =HTMLskills.replace("%data%", bio.skills[0]);
+    $("#skills").append(formattedSkills);
+    formattedSkills =HTMLskills.replace("%data%", bio.skills[1]);
+    $("#skills").append(formattedSkills);
+    formattedSkills =HTMLskills.replace("%data%", bio.skills[2]);
+    $("#skills").append(formattedSkills);
+}
+
+
+
+for(job in work.jobs) {
+    $("#workExperience").append(HTMLworkStart);
+    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+    var formattedEmployerTitle = formattedEmployer + formattedTitle;
+    $(".work-entry:last").append(formattedEmployerTitle);
+    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates)
+    $(".work-entry:last").append(formattedDates);
+    var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+    $(".work-entry:last").append(formattedLocation);
+    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+    $(".work-entry:last").append(formattedDescription);
+}
+
+     
 
 
