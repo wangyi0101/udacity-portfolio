@@ -39,10 +39,16 @@ var projects = {
     "projects" :[
     {
         "title" : "none",
-        "dtaes" : "2015",
+        "dates" : "2015",
         "description": "none",
 
-    }]
+    },
+    {
+        "title" : "none",
+        "dates" : "2015",
+        "description": "none",
+    }
+    ]
 }
 
 
@@ -104,9 +110,8 @@ if(bio.skills.length > 0){
     $("#skills").append(formattedSkills);
 }
 
-
-
-for(job in work.jobs) {
+function displayWork() {
+    for(job in work.jobs) {
     $("#workExperience").append(HTMLworkStart);
     var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
     var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
@@ -119,7 +124,40 @@ for(job in work.jobs) {
     var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
     $(".work-entry:last").append(formattedDescription);
 }
+}
 
-     
+displayWork();
+
+$(document).click(function(loc) { 
+    var x = loc.pageX; 
+    var y = loc.pageY; 
+    logClicks(x,y)
+}
+);
+
+function inName(name){
+    name = bio.name.split(" ");
+    console.log(name);
+    name[1]= name[1].toUpperCase();
+    name[0] = name[0].slice(0,1).toLocaleUpperCase() + name[0].slice(1).toLowerCase();
+    finalName = name[0] + " " + name[1];
+    return finalName;
+}
+
+$("#main").append(internationalizeButton);
+$("#mapDiv").append(googleMap);
+
+projects.display = function() {
+    for (project in projects.projects){
+    $("#projects").append(HTMLprojectStart);
+    var formattedProjectTitle= HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+    $(".project-entry:last").append(formattedProjectTitle);
+    var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+    $(".project-entry:last").append(formattedDates);
+    var formattedProjectDes = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+    $(".project-entry:last").append(formattedProjectDes);
+}
+}
+
 
 
