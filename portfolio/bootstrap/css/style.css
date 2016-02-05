@@ -27,3 +27,8 @@ body{
     width: 100vmax;
     height: 100vmax;
 }
+
+.image-title{
+    color: #202020;
+    font-weight: bolder;
+}
