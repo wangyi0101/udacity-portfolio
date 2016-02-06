@@ -15,7 +15,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <img class="title-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Udacity_Logo.svg" alt="logo"></div>
+          <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Udacity_Logo.svg" alt="logo"></div>
         <div class="col-md-6 text-right text-uppercase">
           <h1 class="text-thin title-super">Yi Wang</h1>
           <h3>Front-end Developer</h3>
@@ -38,25 +38,49 @@
             <!-- Wrapper for carousel items -->
             <div class="carousel-inner">
               <div class="item active">
-                <img src="img/build/project1.jpg" alt="project1">
+                <picture>
+                  <source media="(max-width: 600px)"
+                          sizes="100vw"
+                          srcset="img/build/project1_s.jpg 555w,
+                                  img/build/project1.jpg 1140w">
+                  <img src="img/build/project1.jpg" alt="project1">
+                </picture>
                 <div class="carousel-caption">
                   <h3> This is my first project</h3>
                 </div>
               </div>
               <div class="item">
-                <img src="img/build/project2.jpg" alt="project2">
+                <picture>
+                  <source media="(max-width: 600px)"
+                          sizes="100vw"
+                          srcset="img/build/project2_s.jpg 555w,
+                                 img/build/project3.jpg 1140w">
+                  <img src="img/build/project2.jpg" alt="project2">
+                </picture>
                 <div class="carousel-caption image-title">
                   <h3> This is my second project</h3>
                 </div>
               </div>
               <div class="item">
-                <img src="img/build/project3.jpg" alt="project3">
+                <picture>
+                  <source media="(max-width: 600px)"
+                          sizes="100vw"
+                          srcset="img/build/project3_s.jpg 555w,
+                                  img/build/project3.jpg 1140w">
+                  <img src="img/build/project3.jpg" alt="project3">
+                </picture>
                 <div class="carousel-caption image-title">
                   <h3> This is my third project</h3>
                 </div>
               </div>
               <div class="item">
-                <img src="img/build/project4.jpg" alt="project3">
+                <picture>
+                  <source media="(max-width: 600px)"
+                          sizes="100vw"
+                          srcset="img/build/project4_s.jpg 555w,
+                                  img/build/project4.jpg 1140w">
+                  <img src="img/build/project4.jpg" alt="project4">
+                </picture>
                 <div class="carousel-caption">
                   <h3> This is my fourth project</h3>
                 </div>
