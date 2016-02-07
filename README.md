@@ -1,6 +1,8 @@
 # [Project 1 - Portfolio](http://wangyi0101.github.io/udacity-portfolio/)
 
-This portfolio responsive website [(visit here)](http://wangyi0101.github.io/udacity-portfolio/) is my first Udacity Front-End Web Developer Nanodegree project. In this project I replicated a design mockup in HTML and CSS, and added a carousel and modals to personalize the page design. The techniques that I used include:
+[https://github.com/wangyi0101/udacity-portfolio](https://github.com/wangyi0101/udacity-portfolio)
+
+This portfolio responsive website [(Link)](http://wangyi0101.github.io/udacity-portfolio/) is my first Udacity Front-End Web Developer Nanodegree project. In this project I replicated a design mockup in HTML and CSS, and added a carousel and modals to personalize the page design. The techniques that I used include:
 
 * Bootstrap gribs system and Bootstrap carousel
 * Responsive image with Bootstrap's `img-responsive` calss，`picture` element, `source` element and `srcset` attribute
